@@ -71,6 +71,7 @@ window.addEventListener("load", async () => {
   let ipurl = `https://api.ipgeolocation.io/ipgeo?apiKey=ab6af09c15b04f7483171cc2180e2d5c`;
   let ipresponse = await fetch(ipurl);
   let ipdata = await ipresponse.json();
+  console.log(ipdata);
   //weather api
   let weatherURLBase = `https://api.weatherapi.com/v1/forecast.json?key=39e38d5b03284e95a19102439241107&q=${ipdata.city}&days=5`;
   let weatherresponse = await fetch(weatherURLBase);
