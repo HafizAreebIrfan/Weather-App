@@ -68,7 +68,7 @@ submitbtn.addEventListener("click", async (evt) => {
 
 window.addEventListener("load", async () => {
   //ipurl
-  let ipurl = `https://api.ipgeolocation.io/ipgeo?apiKey=ab6af09c15b04f7483171cc2180e2d5c`;
+  let ipurl = `https://api.geoapify.com/v1/ipinfo?apiKey=3beafeb20f6a47f8b28f457fca6bef94`;
   let ipresponse = await fetch(ipurl);
   let ipdata = await ipresponse.json();
   console.log(ipdata);
