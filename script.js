@@ -71,7 +71,6 @@ window.addEventListener("load", async () => {
   let ipurl = `https://api.geoapify.com/v1/ipinfo?apiKey=3beafeb20f6a47f8b28f457fca6bef94`;
   let ipresponse = await fetch(ipurl);
   let ipdata = await ipresponse.json();
-  console.log(ipdata);
   //weather api
   let weatherURLBase = `https://api.weatherapi.com/v1/forecast.json?key=39e38d5b03284e95a19102439241107&q=${ipdata.city.name}&days=5`;
   let weatherresponse = await fetch(weatherURLBase);
