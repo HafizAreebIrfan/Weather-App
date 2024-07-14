@@ -75,7 +75,6 @@ window.addEventListener("load", async () => {
   let weatherURLBase = `https://api.weatherapi.com/v1/forecast.json?key=39e38d5b03284e95a19102439241107&q=${ipdata.city}&days=5`;
   let weatherresponse = await fetch(weatherURLBase);
   let weatherdata = await weatherresponse.json();
-  console.log(weatherdata);
   //airquality api
   let airqualityURL = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${ipdata.latitude}&lon=${ipdata.longitude}&appid=caaf27dbce8b55041d5283719e9a071c&units=metric`;
   let airqualityresponse = await fetch(airqualityURL);
@@ -135,7 +134,6 @@ const weatherapi = async () => {
   let weatherURLBase = `https://api.weatherapi.com/v1/forecast.json?key=39e38d5b03284e95a19102439241107&q=${search.value}&days=5`;
   let weatherresponse = await fetch(weatherURLBase);
   let weatherdata = await weatherresponse.json();
-  console.log(weatherdata);
   //airquality api
   let latitude = weatherdata.location.lat;
   let longitude = weatherdata.location.lon;
@@ -972,13 +970,8 @@ const forecastinfo = async (forecastdata) => {
         if (iconday) {
           dayicon[i].src = iconday;
         } else {
-          console.error("Day icon not found for code:", iconcondition);
         }
       } else {
-        console.log(
-          "Weather condition not found in weatherConditions array",
-          weatherCondition
-        );
       }
     }
   }
