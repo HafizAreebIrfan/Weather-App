@@ -73,17 +73,17 @@ window.addEventListener("load", async () => {
   let ipdata = await ipresponse.json();
   console.log(ipdata);
   //weather api
-  let weatherURLBase = `https://api.weatherapi.com/v1/forecast.json?key=39e38d5b03284e95a19102439241107&q=${ipdata.city}&days=5`;
+  let weatherURLBase = `https://api.weatherapi.com/v1/forecast.json?key=39e38d5b03284e95a19102439241107&q=${ipdata.city.name}&days=5`;
   let weatherresponse = await fetch(weatherURLBase);
   let weatherdata = await weatherresponse.json();
   //airquality api
-  let airqualityURL = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${ipdata.latitude}&lon=${ipdata.longitude}&appid=caaf27dbce8b55041d5283719e9a071c&units=metric`;
+  let airqualityURL = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${ipdata.location.latitude}&lon=${ipdata.location.longitude}&appid=caaf27dbce8b55041d5283719e9a071c&units=metric`;
   let airqualityresponse = await fetch(airqualityURL);
   let airqualitydata = await airqualityresponse.json();
   
   weatherinfo(weatherresponse, weatherdata, airqualitydata);
   //forecast api
-  let forecastURL = `https://api.weatherapi.com/v1/forecast.json?key=39e38d5b03284e95a19102439241107&q=${ipdata.city}&days=5`;
+  let forecastURL = `https://api.weatherapi.com/v1/forecast.json?key=39e38d5b03284e95a19102439241107&q=${ipdata.city.name}&days=5`;
   let forecastresponse = await fetch(forecastURL);
   let forecastdata = await forecastresponse.json();
   forecastinfo(forecastdata);
@@ -92,7 +92,7 @@ window.addEventListener("load", async () => {
   const getDayDateTime = async () => {
     let sunsetTime = new Date(weatherdata.forecast.forecastday[0].astro.sunset);
     let timezone = new Date().toLocaleString("en-US", {
-      timeZone: `${ipdata.time_zone.name}`,
+      timeZone: `${weatherdata.location.tz_id}`,
     });
     let userday = new Date(timezone);
     let dayName = userday.toLocaleDateString("en-US", { weekday: "long" });
