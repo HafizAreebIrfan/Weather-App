@@ -137,7 +137,7 @@ const weatherapi = async () => {
   //airquality api
   let latitude = weatherdata.location.lat;
   let longitude = weatherdata.location.lon;
-  let airqualityURL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=caaf27dbce8b55041d5283719e9a071c&units=metric`;
+  let airqualityURL = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=caaf27dbce8b55041d5283719e9a071c&units=metric`;
   let airqualityresponse = await fetch(airqualityURL);
   let airqualitydata = await airqualityresponse.json();
 
