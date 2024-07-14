@@ -107,7 +107,7 @@ window.addEventListener("load", async () => {
     else{
       gethijridate = `${userday.getDate()}-${userday.getMonth() + 1}-${userday.getFullYear()}`;
     }
-    let hijriurl = `http://api.aladhan.com/v1/gToH/${gethijridate}`;
+    let hijriurl = `https://api.aladhan.com/v1/gToH/${gethijridate}`;
     let hijriresposne = await fetch(hijriurl);
     let hijridata = await hijriresposne.json();
     let hijridateineng = hijridata.data.hijri.date;
