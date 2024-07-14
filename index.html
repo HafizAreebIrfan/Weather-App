@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="search">
+        <form action="submit">
+          <input
+            type="search"
+            name="city"
+            id="search"
+            placeholder="Search your city"
+          />
+          <button class="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+      <div class="citycontent">
+        <h4 class="city"></h4>
+        <p class="georgdate"></p>
+        <p class="hijridate"></p>
+      </div>
+    </div>
+    <div class="weathercard">
+      <div class="container">
+        <div class="today">
+          <div class="now">
+            <div class="nowleft">
+              <img class="nowicon" src="" alt="currentweatherimage" />
+              <h4 class="nowweather"></h4>
+              <p class="winddirection">wind direction: </p>
+            </div>
+            <div class="nowright">
+              <h1 class="nowdegree"></h1>
+              <p class="maxmintemp"></p>
+              <p class="uv">uv: </p>
+            </div>
+          </div>
+          <div class="forecastcard">
+            <div class="foreheader">
+              <h1>3 Day Forecast</h1>
+              <button class="foreicon">
+                <i class="fas fa-angle-up"></i>
+              </button>
+            </div>
+            <div class="forecast">
+              <div class="day1">
+                <p class="forecastday1"></p>
+                <img class="dayicon" src="" alt="day1weathericon" />
+                <h1 class="day1maxtemp"></h1>
+                <h4 class="day1mintemp"></h4>
+              </div>
+              <div class="day2">
+                <p class="forecastday2"></p>
+                <img class="dayicon" src="" alt="day2weathericon" />
+                <h1 class="day2maxtemp"></h1>
+                <h4 class="day2mintemp"></h4>
+              </div>
+              <div class="day3">
+                <p class="forecastday3"></p>
+                <img class="dayicon" src="" alt="day3weathericon" />
+                <h1 class="day3maxtemp"></h1>
+                <h4 class="day3mintemp"></h4>
+                <p class="day3weather"></p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="moredetail">
+          <div class="feelslike">
+            <div class="img">
+              <img class="feelicon" src="./assets/feelslike.png" alt="" />
+            </div>
+            <div class="text">
+              <h1 class="feeltemp"></h1>
+              <p>Feels Like</p>
+            </div>
+          </div>
+          <div class="humidity">
+            <div class="img">
+              <img class="humidicon" src="./assets/humidity.png" alt="" />
+            </div>
+            <div class="text">
+              <h1 class="humidpercent">%</h1>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="wind">
+            <div class="img">
+              <img class="windicon" src="./assets/windy.png" alt="" />
+            </div>
+            <div class="text">
+              <h1 class="windspeed"></h1>
+              <p>Winds</p>
+            </div>
+          </div>
+          <div class="sunrise">
+            <div class="img">
+              <img class="sunriseicon" src="./assets/sunrise.png" alt="" />
+            </div>
+            <div class="text">
+              <h1 class="sunrisehead"></h1>
+              <p class="sunrisetext">Sunrise</p>
+            </div>
+          </div>
+          <div class="sunset">
+            <div class="img">
+              <img class="sunseticon" src="./assets/sunset.png" alt="" />
+            </div>
+            <div class="text">
+              <h1 class="sunsethead"></h1>
+              <p class="sunsettext">Sunset</p>
+            </div>
+          </div>
+          <div class="airquality">
+            <div class="img">
+              <img class="airqualityicon" src="./assets/airquality.png" alt="" />
+            </div>
+            <div class="text">
+              <h1 class="airqualityhead"></h1>
+              <p class="airqualitytext">Air Quality</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+    </div>
+    <div class="footer">
+      <p>
+        Copyright 2024 Designed & Developed By HAPRODUCTION. MADE IN PAKISTAN.
+      </p>
+    </div>
+    <script src="./script.js"></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"
+    ></script>
+  </body>
+</html>
