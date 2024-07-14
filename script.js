@@ -77,9 +77,10 @@ window.addEventListener("load", async () => {
   let weatherdata = await weatherresponse.json();
   console.log(weatherdata);
   //airquality api
-  let airqualityURL = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${ipdata.latitude}&lon=${ipdata.longitude}&appid=caaf27dbce8b55041d5283719e9a071c&units=metric`;
+  let airqualityURL = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${ipdata.latitude}&lon=${ipdata.longitude}&appid=caaf27dbce8b55041d5283719e9a071c&units=metric`;
   let airqualityresponse = await fetch(airqualityURL);
   let airqualitydata = await airqualityresponse.json();
+  
   weatherinfo(weatherresponse, weatherdata, airqualitydata);
   //forecast api
   let forecastURL = `https://api.weatherapi.com/v1/forecast.json?key=39e38d5b03284e95a19102439241107&q=${ipdata.city}&days=5`;
