@@ -6,7 +6,6 @@ const nowdegree = document.querySelector(".nowdegree");
 const nowweather = document.querySelector(".nowweather");
 const city = document.querySelector(".city");
 const georgdate = document.querySelector(".georgdate");
-const hijridate = document.querySelector(".hijridate");
 const maxmintemp = document.querySelector(".maxmintemp");
 const uv = document.querySelector(".uv");
 const winddirection = document.querySelector(".winddirection");
@@ -89,7 +88,6 @@ window.addEventListener("load", async () => {
 
   //update date time day
   const getDayDateTime = async () => {
-    let sunsetTime = new Date(weatherdata.forecast.forecastday[0].astro.sunset);
     let timezone = new Date().toLocaleString("en-US", {
       timeZone: `${weatherdata.location.tz_id}`,
     });
@@ -97,33 +95,6 @@ window.addEventListener("load", async () => {
     let dayName = userday.toLocaleDateString("en-US", { weekday: "long" });
     georgdate.innerText = dayName;
     georgdate.innerText += ` ${timezone}`;
-
-    let gethijridate;
-    if (userday > sunsetTime) {
-      let tomorrow = new Date(userday);
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      gethijridate = `${tomorrow.getDate()}-${tomorrow.getMonth() + 1}-${tomorrow.getFullYear()}`;
-    }
-    else{
-      gethijridate = `${userday.getDate()}-${userday.getMonth() + 1}-${userday.getFullYear()}`;
-    }
-    let hijriurl = `https://api.aladhan.com/v1/gToH/${gethijridate}`;
-    let hijriresposne = await fetch(hijriurl);
-    let hijridata = await hijriresposne.json();
-    let hijridateineng = hijridata.data.hijri.date;
-
-    //convert hijridate to arabic format
-    const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-    const convertToArabicNumerals = (numberString) => {
-      return numberString.split('').map(char => {
-        if (char >= '0' && char <= '9') {
-          return arabicNumerals[char];
-        }
-        return char;
-      }).join('');
-    };
-    let hijriDateInArabic = convertToArabicNumerals(hijridateineng);
-    hijridate.innerText = `${hijridata.data.hijri.weekday.ar} ${hijriDateInArabic} ${hijridata.data.hijri.month.ar}`;
   };
   clearInterval(intervalId);
   intervalId = setInterval(getDayDateTime, 1000);
