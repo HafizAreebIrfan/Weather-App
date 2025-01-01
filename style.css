@@ -27,7 +27,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.2);  
+  background: rgba(0, 0, 0, 0.2);
   z-index: 1;
   height: auto;
 }
@@ -354,7 +354,7 @@ img {
   }
 }
 @media only screen and (max-width: 1200px) {
-  .weathercard{
+  .weathercard {
     height: auto;
   }
   .moredetail {
@@ -376,8 +376,8 @@ img {
     padding: 1rem;
     margin: 0 0rem 1rem 0.5rem;
   }
-  .footer{
-    padding: 2rem 0rem 0 0rem ;
+  .footer {
+    padding: 2rem 0rem 0 0rem;
     position: relative;
   }
 }
@@ -439,11 +439,10 @@ img {
     padding: 1rem;
     margin: 0 0.5rem 1rem 0;
   }
-  .footer{
-    padding: 3rem 2rem 0 2rem ;
+  .footer {
+    padding: 3rem 2rem 0 2rem;
     position: relative;
   }
-
 }
 @media only screen and (max-width: 500px) {
   .header {
@@ -480,7 +479,7 @@ img {
   .now .nowright {
     text-align: right;
   }
-  .now .nowright h1{
+  .now .nowright h1 {
     font-size: 36px;
   }
   .now .nowright .maxmintemp {
@@ -513,7 +512,7 @@ img {
     padding-bottom: 50px;
   }
 }
-@media only screen and (max-width: 430px){
+@media only screen and (max-width: 430px) {
   .feelslike,
   .humidity,
   .wind,
@@ -537,5 +536,10 @@ img {
   .now .nowleft {
     margin-top: -7px;
     text-align: right;
+  }
+}
+@media only screen and (max-height : 700px) {
+  .footer{
+    bottom: -2rem;
   }
 }
